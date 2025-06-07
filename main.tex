@@ -1,7 +1,5 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-%Template version as of 6/27/2024
 
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
@@ -11,52 +9,51 @@
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
-}
+\title{Conference Paper Title*}
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
+\author{
+\begin{center}
+\begin{tabular}{cc}
+\begin{tabular}{c}
+\textbf{1\textsuperscript{st} Given Name Surname} \\
+Dept. name of organization \\
+Name of organization \\
 City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
+email1@example.com
+\end{tabular}
+&
+\begin{tabular}{c}
+\textbf{2\textsuperscript{nd} Given Name Surname} \\
+Dept. name of organization \\
+Name of organization \\
 City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
+email2@example.com
+\end{tabular}
+\\[3.5em]
+\begin{tabular}{c}
+\textbf{3\textsuperscript{rd} Given Name Surname} \\
+Dept. name of organization \\
+Name of organization \\
 City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
+email3@example.com
+\end{tabular}
+&
+\begin{tabular}{c}
+\textbf{4\textsuperscript{th} Given Name Surname} \\
+Dept. name of organization \\
+Name of organization \\
 City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+email4@example.com
+\end{tabular}
+\end{tabular}
+\end{center}
 }
 
 \maketitle
+
 
 \begin{abstract}
 This document is a model and instructions for \LaTeX.
@@ -70,8 +67,29 @@ component, formatting, style, styling, insert.
 
 \section{Introduction}
 
-\section{Prepare Your Paper Before Styling}
-=======something something========\\
+Cold storage has diverse applications over various industries. Fresh produce is kept in supermarkets on refrigeration racks to prevent thermal and bacterial spoilage, while raw products such as sashimi rely on cold storage to treat parasites in aquatic produce. In the medical industry, vaccines are stored under low temperatures to maintain antigen viability. The Pfizer-BioNTech vaccine
+requires a storage temperature of -80 $^{\circ}$C due to thermal instability of mRNA and its encapsulating lipid nanoparticles as an example\cite{uddin_challenges_2021}. A large proportion of the products from these categorical examples are volatile under temperature changes, hence it is necessary to maintain temperature control throughout the product to consumer distribution chain. Cold storage during transport is often more costly than stationary storage due to lower energy efficiency, caused by variable ambient temperature and lower insulation \cite{maiorino_refrigerated_2021}, thus motivating a separate analysis of higher refrigeration costs in transport operations.\\
+Additionally, cold chain transport produces greenhouse gases in the form of CO$_2$ and refrigerants in cases of leaks. Greenhouse gases are the primary cause of global warming and its subsequent effects of climate change, which includes but are not limited to an increased transmissibility of tropical diseases \cite{thomson_climate_2022} and crop failure due to floods \cite{mirza_climate_2011}. In accordance to decision making associated with 
+corporate social responsibility and the UN SDG 13 (Climate Action), it is important to reduce the effects of cold chain transport to the climate and external stakeholders, motivating the analysis of variables affecting  transport emissions.\\
+We thus propose a model which aims to optimize transport costs, emissions, and customer satisfaction from a cold chain consisting of transport from suppliers to customers by employing Mixed Integer Linear Programming with Coin Branch and Cut and LSGA-2. The cold chain model is integrated with a customer satisfaction variable in order to reflect the importance of timeliness  in transport to customers.
+
+\bigskip
+
+\section{Literature Review}
+
+The optimization of cold-chain logistics networks has become critical in balancing cost, carbon emissions, and service quality. Liu et al. (2021) develop an integer‐programming model for “origin–DC–customer” routing of fresh products, explicitly incorporating energy‐saving and emission‐reduction objectives alongside inventory, damage, penalty, and refrigeration costs \cite{Liu2021} (Liu et al., 2021). They compare a pure genetic algorithm with a hybrid GA–local‐search approach on real‐world data, demonstrating that the hybrid method yields superior Pareto‐front solutions for total cost and emissions.\\
+For strategic facility location, Li and Zhou (2021) propose a multi‐objective mixed‐integer programming model for cold‐chain distribution center siting that integrates dynamic transportation emissions, static DC emissions, construction and operation costs, and time‐window penalty costs for customer satisfaction \cite{Li2021} (Li & Zhou, 2021). Their work employs NSGA-II, leveraging fast non‐dominated sorting and elitist selection, to generate diverse Pareto‐optimal trade-offs between cost, emissions, and service level.\\
+The use of evolutionary multi‐objective algorithms in cold‐chain design is well established. Deb et al. (2002) introduced NSGA-II—now a de facto standard for handling complex, non‐convex multi‐criteria problems—which Li and Zhou adopt to efficiently explore large solution spaces under conflicting objectives \cite{Deb2002} (Deb et al., 2002). Complementing this, Ehrgott (2005) surveys multi‐criteria optimization methods, providing theoretical foundations for interpreting Pareto‐frontiers and supporting decision‐maker preference elicitation in supply‐chain contexts \cite{Ehrgott2005} (Ehrgott, 2005).\\
+Carbon‐emission accounting in logistics has evolved from static factor models to more granular, load‐dependent formulations. Min and Zhou (2002) incorporate per‐km emission factors and load ratios into location‐allocation decisions, an approach echoed in Liu et al.'s refrigerated‐vehicle emission terms and Li and Zhou’s dynamic‐static emission splits \cite{Min2002} (Min & Zhou, 2002). Macharis et al. (2009) further distinguish fixed DC emissions from transport emissions, justifying the separate $\theta S_i$ and $\chi$-terms in our model’s carbon objective \cite{Macharis2009} (Macharis et al., 2009).\\
+Time‐window constraints and service‐level penalties are classical in vehicle routing. Solomon (1987) formalizes VRPTW with soft and hard time windows, introducing early/late penalties analogous to our piecewise cost function $C(T_{jk})$ \cite{Solomon1987} (Solomon, 1987). Savelsbergh and Sol (1995) review exact and heuristic VRPTW methods, offering practical insights into penalty‐incorporating routing heuristics that inform both Liu et al.’s and Li and Zhou’s solution algorithms \cite{Savelsbergh1995} (Savelsbergh & Sol, 1995).\\
+Recent research extends the integration of cold-chain logistics with sustainability goals. Wang et al. (2023) present a green vehicle routing model that incorporates battery electric trucks with limited range and recharging constraints, balancing carbon footprint reduction with cost and time penalties \cite{Wang2023} (Wang et al., 2023). Similarly, Chen and Huang (2022) develop a stochastic multi‐objective framework for cold-chain distribution under demand uncertainty, employing a robust optimization approach to hedge against variability while maintaining carbon and cost efficiency \cite{Chen2022} (Chen & Huang, 2022).\\
+The rise of IoT and real-time monitoring technologies also offers new avenues to enhance cold-chain efficiency. For instance, Silva et al. (2021) integrate sensor data for real-time temperature and location tracking to dynamically adjust routing and storage decisions, minimizing spoilage risks and energy consumption \cite{Silva2021} (Silva et al., 2021). These data-driven approaches complement traditional optimization, enabling adaptive and more resilient logistics networks.\\
+Finally, decision-support systems increasingly incorporate interactive multi-criteria decision analysis (MCDA) tools to facilitate stakeholder engagement in cold-chain planning. Brans and Mareschal (2005) demonstrate the application of PROMETHEE methods to balance environmental and economic objectives, providing transparent trade-off visualization to decision-makers \cite{Brans2005} (Brans & Mareschal, 2005). This human-in-the-loop perspective is vital given the complexity and competing priorities in cold-chain logistics.
+
+\bigskip
+
+\section{Problem Formulation}
+
 In our problem formulation, we have a set of $I$ supplier, $J$ distribution centers (DCs), and $K$ customers, which can be thought of as supermarkets or stores.
 We act as both the suppliers and distributors of a product, starting without any distribution centers initially. The goal is to transport the goods while optimizing for the costs, carbon emissions, and customer utilitiy. As we have multiple objective functions, we often have to optimize for the best compromise  \cite{benayounLinearProgrammingMultiple1971}, as an optimal solution for all might not exist. \\
 There are costs associated with acting as bost supplier and distributor. First, the distribution 
@@ -79,7 +97,7 @@ centers must be built, if they haven't already. This has a cost associated per u
 Next, there is also a cost associated with running the distribution facilities. This is proportional to the size of the facility. Although costs might vary per distribution center, we assume for simplicity that the costs are flat per unit of area. Finally, we also assume for simplicity we have infinite trucks to transport the goods. \\
 There is also a cost associated with transporting te goods from the supply center to the distribution center, then from the distribution center to the customer. This is proportional to the number of trucks required, the distance between the locations, and the cost of transporting per km.\\
 Finally, goods can be damaged in transport. We represent this as opportunity cost, as we can't sell damaged goods. The cost is proportional to the price of the object, the damage rate per km, as different objects could have different rates, and the distance traveled.\\
-For carbon costs, it is proportional to the carbon efficiency of the vehicle (measured for example as carbon emissions / km), how far we must travel, and how full the truck, as more weight could result in more emissions \underline{Find reference for this}. Note we assume that all the trucks must return to their original individual supply centers, and so in one way there is the cost associated with the weight, but in the other the truck is empty.\\
+For carbon costs, it is proportional to the carbon efficiency of the vehicle (measured for example as carbon emissions / km), how far we must travel, and how full the truck, as more weight could result in more emissions \cite{du_plessis_calculating_2023}. Note we assume that all the trucks must return to their original individual supply centers, and so in one way there is the cost associated with the weight, but in the other the truck is empty.\\
 Customer satisfaction is proportional to the arrival of the vehicles to the customer. If they are within a reasonable tolerance, it incurs no penalty. But if the vehicle arrives too late or too early, we incur a penalty proportional to how late or early we are.
 \subsection*{Sets}
 \begin{itemize}
@@ -168,13 +186,27 @@ t_{ij}, t_{jk} &\geq 0 \quad \forall i,j,k \\
 c_j, x_{ij}, y_{jk} &\in \{0, 1\} \quad \forall i,j,k \\
 0 \leq \eta_j &\leq \eta_j^{\max} \quad \forall j
 \end{align}
-\subsection{Units}
-\begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
-\end{itemize}
+
+\bigskip
+
+\section{Variable Choices}
+Variables chosen are based on quantitative data done by the research of . Numerical values of the variables are given as following :
+\begin{center}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{@{}llp{5cm}l@{}}
+    \toprule
+    Variable & Description & Value & Source\\
+    \midrule
+    $\rho_{\max}$ & Fuel consumption under maximum weight & 2.0610 l/km & \cite{du_plessis_calculating_2023}\\ 
+    $\rho_0$ & Fuel consumption under zero load  & 0.3744 l/km & \cite{du_plessis_calculating_2023}\\
+    $\chi$ & Carbon cost of vehicle per kilometer & Average fuel consumption * CO$_2$ emissions per kilometer = 1.3909 kg $CO_2e/km$ & \cite{du_plessis_calculating_2023}\\ 
+    $\phi$ & CO$_2$ conversion per unit goods & 0.87-1.28 kg CO$_2$e/kg & \cite{plessis_energy_2024}\\
+    $\theta$ & Static Carbon Cost Coefficient & 0.190 USD/kg & \cite{iwg_scghg_2021}\\
+\end{tabular}
+}
+\end{center}
+
+\bigskip
 
 \subsection{Equations}
 Number equations consecutively. To make your 
@@ -321,28 +353,6 @@ an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B.
 G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
 acknowledgments in the unnumbered footnote on the first page.
 
-\section*{References}
-
-Please number citations consecutively within brackets . The 
-sentence punctuation follows the bracket . Refer simply to the reference 
-number, as in ---do not use ``Ref. '' or ``reference '' except at 
-the beginning of a sentence: ``Reference  was the first $\ldots$''
-
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
-
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' . Papers 
-that have been accepted for publication should be cited as ``in press'' . 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
-
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation .\cite{iyerColdChainOptimisation2025}
-
-
 \bibliographystyle{IEEEtran}
-\bibliography{MatModProject}
+\bibliography{AMMPaper}
 \end{document}
